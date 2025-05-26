@@ -2,11 +2,22 @@
 
 
 **Prompt 1**
+
 Feu-me una app en React on un administrador pugui crear enquestes amb múltiples preguntes i opcions. Les enquestes es poden desar i veure després.
 
 <img width="488" alt="image" src="https://github.com/user-attachments/assets/d632b033-78b3-4fea-8416-162015007a94" />
 
 <img width="620" alt="image" src="https://github.com/user-attachments/assets/f32c5c5d-12fd-4e0d-960c-ae85a686ca26" />
+
+
+**Prompt 2**
+
+Modifica l'app React anterior per poder eliminar preguntes i opcions mentre es crea l'enquesta.
+
+<img width="488" alt="Sin título" src="https://github.com/user-attachments/assets/0782d721-0530-4fc5-afa9-9020e2732970" />
+
+<img width="622" alt="Sin título" src="https://github.com/user-attachments/assets/11289aed-e844-4d57-a4a1-ff85d1d6226e" />
+
 
 
 **Reflexió de l'ús del Copilot**
