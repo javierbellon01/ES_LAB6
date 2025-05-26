@@ -1,1 +1,5 @@
 # ES_LAB6
+
+L'ús de l'eina de intel·ligència artificial anomenada Copilot representa una evolució en la manera com interactuem amb la tecnologia i accedim a la informació. Aquest assistent d'intel·ligència artificial no només facilita la cerca de dades i la generació de contingut, sinó que també pot estimular el pensament crític i la creativitat en múltiples àmbits. A mesura que l'integrem en les nostres activitats diàries, és essencial reflexionar sobre com el seu ús modifica la manera com processem el coneixement i prenem decisions.
+
+D'una banda, Copilot pot agilitzar tasques, ajudar a resoldre dubtes i inspirar idees que potser no hauríem considerat. Tanmateix, cal mantenir una actitud vigilant per evitar la dependència excessiva i assegurar-se que les seves respostes es contrasten amb fonts fiables. L'ús conscient de Copilot ha de combinar-se amb la capacitat humana de qüestionar, analitzar i interpretar la informació per tal de maximitzar els seus beneficis sense perdre l'autonomia del pensament.
