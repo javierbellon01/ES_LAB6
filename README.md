@@ -30,9 +30,10 @@ Modifica l'app React per permetre crear preguntes amb resposta oberta a més de 
 
 **Prompt 4**
 Afegeix a l'app React la funcionalitat de desfer l'última acció i mostrar missatges de confirmació després de crear, eliminar o modificar enquestes, preguntes i opcions.
+![Captura de pantalla 2025-05-26 161345](https://github.com/user-attachments/assets/12d710d9-2f40-46a4-b4ad-ffa2a35270e0)
+![Captura de pantalla 2025-05-26 161414](https://github.com/user-attachments/assets/0312af65-39ba-45e2-a13e-49a8c706d119)
 
-<img width="488" alt="Sin título" src="https://github.com/user-attachments/assets/1099494c-795a-40fd-a5cc-37c4d2fb23eb" />
-<img width="622" alt="Sin título" src="https://github.com/user-attachments/assets/6f8fd9ad-3900-4b62-a676-af4a44b72c90" />
+
 
 
 **Reflexió de l'ús del Copilot**
