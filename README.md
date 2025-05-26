@@ -46,7 +46,19 @@ Afegeix a l'app React la funcionalitat perquè els usuaris puguin respondre enqu
 <img width="649" alt="Sin título" src="https://github.com/user-attachments/assets/ffe686ed-32b1-4e5f-afe0-3d5b7a921c51" />
 
 
+**Prompt 6**
+
+Fes que la app sigui més bonica visualment.
+
+![Captura de pantalla 2025-05-26 161731](https://github.com/user-attachments/assets/b46dadba-0f14-47a4-9300-6ed72a0cf49b)
+
+![Captura de pantalla 2025-05-26 161800](https://github.com/user-attachments/assets/68704148-ebc3-4c86-96e9-8889f4b82fbc)
+
+
+
+
 **Reflexió de l'ús del Copilot**
+
 L'ús de l'eina de intel·ligència artificial anomenada Copilot representa una evolució en la manera com interactuem amb la tecnologia i accedim a la informació. Aquest assistent d'intel·ligència artificial no només facilita la cerca de dades i la generació de contingut, sinó que també pot estimular el pensament crític i la creativitat en múltiples àmbits. A mesura que l'integrem en les nostres activitats diàries, és essencial reflexionar sobre com el seu ús modifica la manera com processem el coneixement i prenem decisions.
 
 D'una banda, Copilot pot agilitzar tasques, ajudar a resoldre dubtes i inspirar idees que potser no hauríem considerat. Tanmateix, cal mantenir una actitud vigilant per evitar la dependència excessiva i assegurar-se que les seves respostes es contrasten amb fonts fiables. L'ús conscient de Copilot ha de combinar-se amb la capacitat humana de qüestionar, analitzar i interpretar la informació per tal de maximitzar els seus beneficis sense perdre l'autonomia del pensament.
