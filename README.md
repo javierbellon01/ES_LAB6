@@ -18,6 +18,11 @@ Modifica l'app React anterior per poder eliminar preguntes i opcions mentre es c
 
 <img width="622" alt="Sin título" src="https://github.com/user-attachments/assets/11289aed-e844-4d57-a4a1-ff85d1d6226e" />
 
+
+**Prompt 3**
+
+![Captura de pantalla 2025-05-26 155719](https://github.com/user-attachments/assets/b3df0c88-15e6-490d-814e-561728751706)
+
 **Prompt 4**
 Afegeix a l'app React la funcionalitat de desfer l'última acció i mostrar missatges de confirmació després de crear, eliminar o modificar enquestes, preguntes i opcions.
 
