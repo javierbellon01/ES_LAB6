@@ -124,6 +124,7 @@ function App() {
   const [mostrarRespostes, setMostrarRespostes] = useState(false);
   const [enquestaActual, setEnquestaActual] = useState(null);
 
+  // Guarda l'estat actual a l'historial abans de fer canvis
   const guardaHistorial = () => {
     setHistorial((h) => [...h, {
       enquestes: JSON.parse(JSON.stringify(enquestes)),
@@ -234,6 +235,7 @@ function App() {
     setMissatge("Enquesta guardada");
   };
 
+  // Funcions per respondre
   const iniciarResposta = (index) => {
     setEnquestaActual(index);
     const enq = enquestes[index];
@@ -251,6 +253,7 @@ function App() {
   };
 
   const enviarResposta = () => {
+    // Validar que totes les preguntes estan respostes
     const enq = enquestes[enquestaActual];
     for (let i = 0; i < enq.preguntes.length; i++) {
       if (!respostesActual[i] || respostesActual[i].trim() === "") {
