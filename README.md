@@ -18,6 +18,11 @@ Modifica l'app React anterior per poder eliminar preguntes i opcions mentre es c
 
 <img width="622" alt="Sin título" src="https://github.com/user-attachments/assets/11289aed-e844-4d57-a4a1-ff85d1d6226e" />
 
+**Prompt 4**
+Afegeix a l'app React la funcionalitat de desfer l'última acció i mostrar missatges de confirmació després de crear, eliminar o modificar enquestes, preguntes i opcions.
+
+<img width="488" alt="Sin título" src="https://github.com/user-attachments/assets/1099494c-795a-40fd-a5cc-37c4d2fb23eb" />
+<img width="622" alt="Sin título" src="https://github.com/user-attachments/assets/6f8fd9ad-3900-4b62-a676-af4a44b72c90" />
 
 
 **Reflexió de l'ús del Copilot**
