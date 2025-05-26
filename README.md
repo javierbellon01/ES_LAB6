@@ -21,7 +21,12 @@ Modifica l'app React anterior per poder eliminar preguntes i opcions mentre es c
 
 **Prompt 3**
 
+Modifica l'app React per permetre crear preguntes amb resposta oberta a més de preguntes amb opcions.
+
 ![Captura de pantalla 2025-05-26 155719](https://github.com/user-attachments/assets/b3df0c88-15e6-490d-814e-561728751706)
+
+![Captura de pantalla 2025-05-26 155742](https://github.com/user-attachments/assets/15778809-834b-4af6-8808-bb19071acfdb)
+
 
 **Prompt 4**
 Afegeix a l'app React la funcionalitat de desfer l'última acció i mostrar missatges de confirmació després de crear, eliminar o modificar enquestes, preguntes i opcions.
