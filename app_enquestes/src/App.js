@@ -1,5 +1,117 @@
 import React, { useState } from "react";
 
+const styles = {
+  container: {
+    maxWidth: 900,
+    margin: "40px auto",
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    backgroundColor: "#f9fafb",
+    padding: 30,
+    borderRadius: 8,
+    boxShadow: "0 8px 20px rgba(0,0,0,0.1)"
+  },
+  header: {
+    textAlign: "center",
+    color: "#222",
+    marginBottom: 30,
+    fontWeight: "700",
+    fontSize: "2.5rem",
+    letterSpacing: "0.05em"
+  },
+  section: {
+    backgroundColor: "white",
+    padding: 25,
+    borderRadius: 8,
+    boxShadow: "0 3px 12px rgba(0,0,0,0.05)",
+    marginBottom: 30
+  },
+  input: {
+    width: "100%",
+    padding: "12px 15px",
+    marginBottom: 15,
+    borderRadius: 6,
+    border: "1.5px solid #ddd",
+    fontSize: "1rem",
+    outline: "none",
+    transition: "border-color 0.25s",
+  },
+  inputFocus: {
+    borderColor: "#4f46e5",
+    boxShadow: "0 0 5px rgba(79, 70, 229, 0.4)",
+  },
+  select: {
+    padding: "8px 12px",
+    borderRadius: 6,
+    border: "1.5px solid #ddd",
+    fontSize: "1rem",
+    outline: "none",
+    marginLeft: 10,
+    cursor: "pointer",
+    transition: "border-color 0.25s",
+  },
+  button: {
+    backgroundColor: "#4f46e5",
+    color: "white",
+    border: "none",
+    padding: "10px 18px",
+    borderRadius: 6,
+    cursor: "pointer",
+    fontWeight: "600",
+    fontSize: "1rem",
+    marginRight: 10,
+    transition: "background-color 0.3s",
+  },
+  buttonHover: {
+    backgroundColor: "#4338ca",
+  },
+  buttonDanger: {
+    backgroundColor: "#ef4444",
+    marginLeft: 10,
+  },
+  questionBox: {
+    marginBottom: 25,
+    padding: 15,
+    border: "1px solid #e2e8f0",
+    borderRadius: 6,
+    backgroundColor: "#fafafa"
+  },
+  optionRow: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: 8,
+  },
+  optionInput: {
+    flex: 1,
+    padding: 8,
+    borderRadius: 6,
+    border: "1.5px solid #ddd",
+    fontSize: "1rem",
+  },
+  message: {
+    marginTop: 20,
+    color: "#22c55e",
+    fontWeight: "700",
+    textAlign: "center",
+    fontSize: "1.1rem",
+  },
+  responseBox: {
+    marginTop: 15,
+    padding: 15,
+    backgroundColor: "#eef2ff",
+    borderRadius: 6,
+  },
+  resultsTitle: {
+    fontSize: "1.3rem",
+    fontWeight: "700",
+    marginBottom: 10,
+    color: "#333"
+  },
+  listItem: {
+    fontSize: "1rem",
+    marginBottom: 6,
+  }
+};
+
 function App() {
   const [enquestes, setEnquestes] = useState([]);
   const [titol, setTitol] = useState("");
@@ -166,155 +278,190 @@ function App() {
   };
 
   return (
-    <div style={{ maxWidth: 900, margin: "auto", fontFamily: "Arial, sans-serif" }}>
-      <h1>App d’Enquestes</h1>
+    <div style={styles.container}>
+      <h1 style={styles.header}>App d’Enquestes</h1>
 
-      <section style={{ border: "1px solid #ccc", padding: 20, marginBottom: 20 }}>
-        <h2>Crear Enquesta</h2>
+      <section style={styles.section}>
+        <h2 style={{ marginBottom: 15, color: "#4b5563" }}>Crear Enquesta</h2>
         <input
-          style={{ width: "100%", padding: 8, marginBottom: 10 }}
+          style={styles.input}
           placeholder="Títol de l'enquesta"
           value={titol}
           onChange={e => setTitol(e.target.value)}
         />
         {preguntes.map((preg, i) => (
-          <div key={i} style={{ marginBottom: 20, border: "1px solid gray", padding: 10 }}>
-            <input
-              style={{ width: "70%", padding: 5 }}
-              placeholder={`Pregunta ${i + 1}`}
-              value={preg.text}
-              onChange={e => canviarPreguntaText(i, e.target.value)}
-            />
-            <select
-              style={{ marginLeft: 10, padding: 5 }}
-              value={preg.tipus}
-              onChange={e => canviarTipus(i, e.target.value)}
-            >
-              <option value="opcio">Opcions</option>
-              <option value="oberta">Resposta oberta</option>
-            </select>
-            <button
-              onClick={() => eliminarPregunta(i)}
-              style={{ marginLeft: 10, backgroundColor: "#f44336", color: "white", border: "none", padding: "5px 10px" }}
-            >
-              Eliminar pregunta
-            </button>
+          <div key={i} style={styles.questionBox}>
+            <div style={{ display: "flex", alignItems: "center", marginBottom: 12 }}>
+              <input
+                style={{ ...styles.input, marginBottom: 0, flex: 1 }}
+                placeholder={`Pregunta ${i + 1}`}
+                value={preg.text}
+                onChange={e => canviarPreguntaText(i, e.target.value)}
+              />
+              <select
+                style={styles.select}
+                value={preg.tipus}
+                onChange={e => canviarTipus(i, e.target.value)}
+              >
+                <option value="opcio">Opcions</option>
+                <option value="oberta">Resposta oberta</option>
+              </select>
+              <button
+                onClick={() => eliminarPregunta(i)}
+                style={{ ...styles.button, ...styles.buttonDanger }}
+                title="Eliminar pregunta"
+              >
+                ✕
+              </button>
+            </div>
 
             {preg.tipus === "opcio" && preg.opcions.map((opc, j) => (
-              <div key={j} style={{ display: "flex", alignItems: "center", marginTop: 5 }}>
+              <div key={j} style={styles.optionRow}>
                 <input
-                  style={{ flex: 1, padding: 5 }}
+                  style={styles.optionInput}
                   placeholder={`Opció ${j + 1}`}
                   value={opc}
                   onChange={e => canviarOpcio(i, j, e.target.value)}
                 />
                 <button
                   onClick={() => eliminarOpcio(i, j)}
-                  style={{ marginLeft: 5, backgroundColor: "#f44336", color: "white", border: "none", padding: "5px" }}
+                  style={{ ...styles.button, ...styles.buttonDanger, padding: "5px 10px" }}
+                  title="Eliminar opció"
                 >
-                  Eliminar opció
+                  ✕
                 </button>
               </div>
             ))}
             {preg.tipus === "opcio" && (
-              <button onClick={() => afegirOpcio(i)} style={{ marginTop: 5 }}>
+              <button
+                onClick={() => afegirOpcio(i)}
+                style={{ ...styles.button, marginTop: 5, backgroundColor: "#6366f1" }}
+                onMouseEnter={e => e.currentTarget.style.backgroundColor = "#4f46e5"}
+                onMouseLeave={e => e.currentTarget.style.backgroundColor = "#6366f1"}
+              >
                 Afegir opció
               </button>
             )}
           </div>
         ))}
-        <button onClick={afegirPregunta} style={{ marginRight: 10 }}>
-          Afegir pregunta
-        </button>
-        <button onClick={guardarEnquesta}>Guardar enquesta</button>
-        <button onClick={desfer} style={{ marginLeft: 10 }}>
-          Desfer última acció
-        </button>
-      </section>
-
-      <section style={{ border: "1px solid #ccc", padding: 20 }}>
-        <h2>Enquestes disponibles</h2>
-        {enquestes.length === 0 && <p>No hi ha enquestes disponibles</p>}
-        {enquestes.map((enq, i) => (
-          <div key={i} style={{ border: "1px solid #ddd", padding: 10, marginBottom: 10 }}>
-            <h3>{enq.titol}</h3>
-            <button onClick={() => iniciarResposta(i)}>Respondre enquesta</button>
-          </div>
-        ))}
-
-        {enquestaActual !== null && !mostrarRespostes && (
-          <div style={{ border: "1px solid blue", padding: 10, marginTop: 10 }}>
-            <h3>Respondre: {enquestes[enquestaActual].titol}</h3>
-            {enquestes[enquestaActual].preguntes.map((p, i) => (
-              <div key={i} style={{ marginBottom: 10 }}>
-                <p>{p.text}</p>
-                {p.tipus === "opcio" ? (
-                  <select
-                    value={respostesActual[i] || ""}
-                    onChange={(e) => canviarResposta(i, e.target.value)}
-                  >
-                    <option value="">Selecciona una opció</option>
-                    {p.opcions.map((op, idx) => (
-                      <option key={idx} value={op}>
-                        {op}
-                      </option>
-                    ))}
-                  </select>
-                ) : (
-                  <input
-                    type="text"
-                    value={respostesActual[i] || ""}
-                    onChange={(e) => canviarResposta(i, e.target.value)}
-                    placeholder="Resposta oberta"
-                  />
-                )}
-              </div>
-            ))}
-            <button onClick={enviarResposta}>Enviar resposta</button>
-          </div>
-        )}
-
-        {mostrarRespostes && (
-          <div style={{ marginTop: 20 }}>
-            <h3>Resultats de l'enquesta: {enquestes[enquestaActual].titol}</h3>
-            {enquestes[enquestaActual].preguntes.map((p, i) => (
-              <div key={i} style={{ marginBottom: 15 }}>
-                <strong>{p.text}</strong>
-                {p.tipus === "opcio" ? (
-                  <ul>
-                    {p.opcions.map((op, idx) => (
-                      <li key={idx}>
-                        {op}:{" "}
-                        {enquestes[enquestaActual].respostes
-                          ? comptarRespostesOpcio(enquestes[enquestaActual].respostes, i, op)
-                          : 0}{" "}
-                        vots
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div>
-                    <p>Respostes obertes:</p>
-                    <ul>
-                      {enquestes[enquestaActual].respostes &&
-                        enquestes[enquestaActual].respostes.map((resposta, idx) => (
-                          <li key={idx}>{resposta[i]}</li>
-                        ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ))}
-            <button onClick={() => setMostrarRespostes(false)}>Tancar resultats</button>
-          </div>
-        )}
-      </section>
-
-      {missatge && (
-        <div style={{ marginTop: 10, color: "green", fontWeight: "bold" }}>
-          {missatge}
+        <div style={{ marginTop: 10 }}>
+          <button
+            onClick={afegirPregunta}
+            style={{ ...styles.button, backgroundColor: "#3b82f6" }}
+            onMouseEnter={e => e.currentTarget.style.backgroundColor = "#2563eb"}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = "#3b82f6"}
+          >
+            Afegir pregunta
+          </button>
+          <button
+            onClick={guardarEnquesta}
+            style={{ ...styles.button, backgroundColor: "#10b981" }}
+            onMouseEnter={e => e.currentTarget.style.backgroundColor = "#059669"}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = "#10b981"}
+          >
+            Guardar enquesta
+          </button>
+          <button
+            onClick={desfer}
+            style={{ ...styles.button, ...styles.buttonDanger }}
+          >
+            Desfer
+          </button>
         </div>
+      </section>
+
+      <section style={styles.section}>
+        <h2 style={{ marginBottom: 15, color: "#4b5563" }}>Enquestes creades</h2>
+        {enquestes.length === 0 && <p>No hi ha enquestes creades encara</p>}
+        <ul>
+          {enquestes.map((enq, i) => (
+            <li key={i} style={{ marginBottom: 15 }}>
+              <strong>{enq.titol}</strong>{" "}
+              <button
+                onClick={() => iniciarResposta(i)}
+                style={{ ...styles.button, padding: "6px 12px", fontSize: "0.9rem" }}
+              >
+                Respondre
+              </button>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {enquestaActual !== null && (
+        <section style={styles.section}>
+          <h2 style={{ color: "#4b5563" }}>
+            Respondre: <em>{enquestes[enquestaActual].titol}</em>
+          </h2>
+          {enquestes[enquestaActual].preguntes.map((p, i) => (
+            <div key={i} style={{ marginBottom: 15 }}>
+              <label style={{ display: "block", fontWeight: "600", marginBottom: 6 }}>
+                {p.text}
+              </label>
+              {p.tipus === "opcio" ? (
+                <select
+                  style={styles.select}
+                  value={respostesActual[i] || ""}
+                  onChange={e => canviarResposta(i, e.target.value)}
+                >
+                  <option value="">-- Selecciona --</option>
+                  {p.opcions.map((opc, idx) => (
+                    <option key={idx} value={opc}>
+                      {opc}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <textarea
+                  style={{ ...styles.input, height: 80, resize: "vertical" }}
+                  value={respostesActual[i] || ""}
+                  onChange={e => canviarResposta(i, e.target.value)}
+                />
+              )}
+            </div>
+          ))}
+          <button
+            onClick={enviarResposta}
+            style={{ ...styles.button, backgroundColor: "#2563eb" }}
+            onMouseEnter={e => e.currentTarget.style.backgroundColor = "#1d4ed8"}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = "#2563eb"}
+          >
+            Enviar resposta
+          </button>
+          {mostrarRespostes && (
+            <div style={{ marginTop: 25 }}>
+              <h3 style={styles.resultsTitle}>Resultats acumulats:</h3>
+              {enquestes[enquestaActual].preguntes.map((p, i) => (
+                <div key={i} style={{ marginBottom: 15 }}>
+                  <strong>{p.text}</strong>
+                  {p.tipus === "opcio" ? (
+                    <ul>
+                      {p.opcions.map((opc, idx) => {
+                        const count = comptarRespostesOpcio(enquestes[enquestaActual].respostes, i, opc);
+                        return (
+                          <li key={idx} style={styles.listItem}>
+                            {opc}: {count}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : (
+                    <ul>
+                      {enquestes[enquestaActual].respostes.map((r, idx) => (
+                        <li key={idx} style={styles.listItem}>
+                          - {r[i]}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
       )}
+
+      {missatge && <div style={styles.message}>{missatge}</div>}
     </div>
   );
 }
